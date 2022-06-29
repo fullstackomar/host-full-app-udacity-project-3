@@ -88,12 +88,6 @@ workflows:
     jobs:
       - build
       - test
-      - hold:
-          filters:
-            branches:
-              only:
-                - main
-          type: approval
-      - deploy:
-          requires:
-            - hold
+      - deploy
+      
+
