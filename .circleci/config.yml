@@ -78,11 +78,7 @@ jobs:
             eb deploy udagram-server-dev
             echo "# EB setenvs"
             eb setenv POSTGRES_HOST=$POSTGRES_HOST DB_PORT=$DB_PORT POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_DB=$POSTGRES_DB JWT_SECRET=$JWT_SECRET PORT=$PORT
-      - run:
-          name: deploy app
-          command: |
-            npm run deploy    
-            
+
 workflows:
   udagram:
     jobs:
