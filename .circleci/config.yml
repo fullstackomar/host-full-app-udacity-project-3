@@ -10,14 +10,6 @@ jobs:
     docker:
       # the base image can run most needed actions with orbs
       - image: "cimg/node:14.15"
-      environment:
-          POSTGRES_HOST: $POSTGRES_HOST
-          DB_PORT: $DB_PORT
-          PORT: $PORT
-          POSTGRES_PASSWORD: $POSTGRES_PASSWORD
-          POSTGRES_USERNAME: $POSTGRES_USERNAME
-          POSTGRES_DB: $POSTGRES_DB
-          JWT_SECRET: $JWT_SECRET
     steps:
       # install node and checkout code
       - node/install:
@@ -80,6 +72,8 @@ jobs:
           command: |
             echo "# TODO: Install, build, deploy in both apps"
             npm run deploy
+            eb setenv POSTGRES_HOST=$POSTGRES_HOST DB_PORT=$DB_PORT POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_DB=$POSTGRES_DB JWT_SECRET=$JWT_SECRET PORT=$PORT
+
             
 workflows:
   udagram:
