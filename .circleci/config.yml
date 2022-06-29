@@ -67,7 +67,7 @@ jobs:
       - aws-cli/setup
       - checkout
       - run:
-          name: Deploy App
+          name: Envs
           # TODO: Install, build, deploy in both apps
           command: |
             echo "# TODO: Install, build, deploy in both apps"
@@ -78,6 +78,9 @@ jobs:
             eb deploy udagram-server-dev
             echo "# EB setenvs"
             eb setenv POSTGRES_HOST=$POSTGRES_HOST DB_PORT=$DB_PORT POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_DB=$POSTGRES_DB JWT_SECRET=$JWT_SECRET PORT=$PORT
+          name: Deploy App
+          # TODO: Install, build, deploy in both apps
+           command: |
             npm run deploy
             
 workflows:
