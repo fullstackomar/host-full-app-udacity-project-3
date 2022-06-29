@@ -77,10 +77,15 @@ jobs:
             
 workflows:
   udagram:
-    branches:
-      only:
-      - main
     jobs:
       - build
       - test
-      - deploy
+      - hold:
+          filters:
+            branches:
+              only:
+                - main
+          type: approval
+      - deploy:
+          requires:
+            - hold
