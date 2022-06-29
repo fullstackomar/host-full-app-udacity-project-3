@@ -1,4 +1,5 @@
 {
+    
     "scripts": {
         "frontend:install": "cd udagram/udagram-frontend && npm install -f",
         "frontend:start": "cd udagram/udagram-frontend && npm run start",
@@ -12,13 +13,5 @@
         "api:start": "cd udagram/udagram-api && npm run dev",
         "api:deploy": "cd udagram/udagram-api && npm run deploy",
         "deploy": "npm run api:deploy && npm run frontend:deploy"
-    },
-    "name": "Project 3 Host FullStack Application",
-    "version": "0.0.1",
-    "author": "Omar Alaa",
-    "description": "Project Made to Udacity",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/fullstackomar/testz"
     }
 }
